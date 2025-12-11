@@ -102,10 +102,3 @@ siem-vercel-elk/
 │   │   └─ logstash.conf
 ├─ MANUAL.md
 └─ README.md
-```
-
----
-
-Se você quiser, posso criar **uma versão ainda mais “corporativa” com imagens de dashboards, diagramas do fluxo de logs e cores, como se fosse um README de portfólio da Microsoft**, que impressiona visualmente.
-
-Quer que eu faça isso também?
