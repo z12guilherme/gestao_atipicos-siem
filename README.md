@@ -64,12 +64,12 @@ graph TD
     ```
 
 2.  **Exponha o Logstash**
-    O Logstash irá escutar na porta `5044`. Exponha essa porta para a internet usando sua ferramenta de túnel preferida.
+    O Logstash irá escutar na porta `8080`. Exponha essa porta para a internet usando sua ferramenta de túnel preferida.
     ```bash
-    # Exemplo com ngrok
-    ngrok http 5044
+    # Exemplo com Cloudflare Tunnel (recomendado pelo MANUAL.md)
+    cloudflared tunnel --url http://localhost:8080
     ```
-    Copie a URL `https` fornecida pelo ngrok (ex: `https://<hash>.ngrok-free.app`).
+    Copie a URL `https` fornecida pela ferramenta (ex: `https://random-words.trycloudflare.com`).
 
 3.  **Configure o Vercel Log Drains**
     No dashboard do seu projeto na Vercel, vá para **Settings > Log Drains**, selecione o formato **JSON** e cole a URL obtida no passo anterior.
@@ -87,7 +87,7 @@ graph TD
 
 O arquivo de configuração `logstash/pipeline/vercel.conf` define o pipeline de processamento:
 
-*   **Input**: Recebe logs no formato `json_lines` via HTTP na porta `5044`.
+*   **Input**: Recebe logs via HTTP na porta `8080`.
 *   **Filtros**:
     *   Extrai o endereço de IP do cliente (`[proxy][clientIp]`).
     *   Utiliza o filtro `geoip` para enriquecer o log com dados de geolocalização.
@@ -98,8 +98,8 @@ O arquivo de configuração `logstash/pipeline/vercel.conf` define o pipeline de
 
 Após a ingestão dos primeiros logs, siga estes passos no Kibana:
 
-1.  Vá para **Management > Stack Management > Index Management** para verificar se o índice (`vercel-gemini-...`) foi criado.
-2.  Vá para **Analytics > Discover**. Crie um "Data View" usando o padrão de índice `vercel-gemini-*`.
+1.  Vá para **Management > Stack Management > Index Management** para verificar se o índice (`gestao_atipicos_logs-...`) foi criado.
+2.  Vá para **Analytics > Discover**. Crie um "Data View" usando o padrão de índice `gestao_atipicos_logs-*`.
 3.  Comece a explorar seus logs e a criar visualizações para o seu dashboard!
 
 ---

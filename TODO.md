@@ -22,6 +22,6 @@ Este arquivo acompanha o progresso da configuração do nosso SIEM com Elastic S
 
 ## Fase 3: A Primeira Conquista (Dashboard no Kibana)
 - [x] Acessar o Kibana em `http://localhost:5601`
-- [x] Criar uma "Data View" com o padrão `vercel-gemini-*`
+- [x] Criar uma "Data View" com o padrão `gestao_atipicos_logs-*`
 - [x] Acessar a aba "Discover" para confirmar que os logs estão chegando
 - [x] Criar um dashboard simples para visualização dos dados

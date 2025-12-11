@@ -88,7 +88,7 @@ Antes de ir para o Kibana, vamos confirmar que os logs estão chegando.
     - No menu lateral (ícone de hambúrguer), vá para `Stack Management` > `Data Views`.
     - Clique em `Create data view`.
     - No campo `Name`, digite um nome (ex: "Logs da Vercel").
-    - No campo `Index pattern`, digite `vercel-gemini-*`. O Kibana deve encontrar os índices correspondentes.
+    - No campo `Index pattern`, digite `gestao_atipicos_logs-*`. O Kibana deve encontrar os índices correspondentes.
     - Selecione `@timestamp` como o campo de tempo.
     - Clique em `Create data view`.
 3.  **Explore os Logs**:
