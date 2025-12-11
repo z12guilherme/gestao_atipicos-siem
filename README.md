@@ -59,8 +59,8 @@ graph TD
 
 1.  **Clone o Repositório**
     ```bash
-    git clone <URL_DO_SEU_REPOSITORIO>
-    cd <NOME_DA_PASTA>
+    git clone gestao_atipicos-siem
+    cd gestao_atipicos-siem
     ```
 
 2.  **Exponha o Logstash**
