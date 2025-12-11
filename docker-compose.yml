@@ -4,8 +4,9 @@ services:
     container_name: elasticsearch
     environment:
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms2g -Xmx2g # Aloca 2GB de memória
-      - xpack.security.enabled=false # Desabilita segurança para o setup inicial
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g # Ajuste a memória conforme seu servidor
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=sua_senha_super_secreta_aqui # <-- TROQUE ISSO!
     ports:
       - "9200:9200"
     volumes:
@@ -20,6 +21,8 @@ services:
       - "5601:5601"
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=sua_senha_super_secreta_aqui # <-- Use a mesma senha
     depends_on:
       - elasticsearch
     networks:
