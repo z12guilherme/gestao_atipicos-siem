@@ -1,0 +1,9 @@
+# Ignorar dependências e builds pesados
+node_modules/
+.next/
+.vercel/
+dist/
+
+# Ignorar arquivos de ambiente com senhas
+.env
+.env*.local
