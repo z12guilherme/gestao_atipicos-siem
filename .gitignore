@@ -7,3 +7,17 @@ dist/
 # Ignorar arquivos de ambiente com senhas
 .env
 .env*.local
+
+# Ignorar arquivos antigos/movidos
+/blocklist.csv
+/elasticsearch.ts
+/MANUAL.md
+/page.tsx
+/sample_logs.ndjson
+/TODO.md
+/pipeline/
+/logstash/pipeline/elasticsearch.ts
+/logstash/pipeline/logstach.conf
+/logstash/pipeline/page.tsx
+/logstash/pipeline/vercel.conf
+
