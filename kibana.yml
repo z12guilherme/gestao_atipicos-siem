@@ -1,0 +1,11 @@
+server.name: kibana
+server.host: "0.0.0.0"
+elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+monitoring.ui.container.elasticsearch.enabled: true
+
+# Configuração de Proxy para o Elastic Package Registry (Integrations)
+# Se você estiver em uma rede corporativa, descomente e ajuste a linha abaixo:
+# xpack.fleet.registryProxyUrl: "http://seu-proxy-aqui:porta"
+
+# Se precisar apontar para um registro local (offline):
+# xpack.fleet.registryUrl: "http://seu-registro-local:8080"
